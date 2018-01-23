@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem, Icon, Modal, Button, Row, Input} from 'react-materialize'
+//Note the different functions imported on each Module! 
 import { createArtist } from './requests'
+import ArtistGallary from './ArtistGallary';
 
 class Navi extends Component {
+    //sets default values for this state! PEEP THE CHICKEN!
     state = {
         name: "",
         img: "http://food.fnr.sndimg.com/content/dam/images/food/fullset/2010/5/1/0/0039592F3_beer-can-chicken_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382539274625.jpeg",
@@ -17,12 +20,11 @@ class Navi extends Component {
         facebook: ""
     }
 
-    componentDidMount() {
-
-    }
-
+    //Create NEW ARTIST FUNCTION
     createNewArtist() {
+        //First if Validates if you're actully passing a value
         if(Object.keys(this.state).length === 0) { alert('please fill out all fields'); return; }
+        //attaches these default values AFTER the artist is created!
         var newArtistObject = Object.assign({}, this.state, {
             flow: 0,
             delivery: 0,
@@ -48,6 +50,8 @@ class Navi extends Component {
                 <Navbar brand='Vibed' right>
                     <Modal header='Create Artist' trigger={<Button>Create Artist</Button>}>
                         <Row>
+                            {/* peep the input butttons, they're set up with functions Creating NEW ArtistGallar
+                            YOU WON"T SEE THIS PAGE UNTIL AFTER YOU HIT CREATE ARTIST MODAL! */}
                             <Input placeholder="Enter Name" s={12} label="First Name" 
                                 onChange={(event, name) => { this.setState({ name }) }}/>
                             <Input placeholder="Enter Image URL" s={12} label="Image URL" 
@@ -71,7 +75,7 @@ class Navi extends Component {
                                 onChange={(event, snapchat) => { this.setState({ snapchat }) }}/>
                             <Input placeholder="Enter Facebook URL" s={12} label="Facebook" 
                                 onChange={(event, facebook) => { this.setState({ facebook }) }}/>
-
+                                {/* Where it's actually sending it off to the new Databse using the createNewARtist Function.  */}
                             <Button waves='light' onClick={() => { this.createNewArtist() }}>SUBMIT</Button>
                         </Row>
 	                </Modal>

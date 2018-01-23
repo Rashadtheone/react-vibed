@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import Navi from './Navi.js';
 import ArtistGallary from './ArtistGallary'  
 import './App.css';
@@ -44,15 +44,16 @@ class App extends Component {
       console.log(resp);
       //sets the state of the artist to the updated version.
       let newArtistsObj = Object.assign({}, this.state.artists);
-      //focuses on objs ID, and labels it artistObject
+      //focuses on objs ID, and labels it artistObject 
       newArtistsObj[artistsId] = artistObject;
       this.setState({ artists: newArtistsObj }, ()=> {
         if(callback) { callback() }
       }) 
     })
   }
-
+// This Function deletes using the ArtistID once again ensure the right selctions.
   DeleteArtist(artistId, callback) {
+    //This second call gives us the abilityt o make a promise, that'll return the Database with the deleted artist.
     deleteArtist(artistId)
     .then(resp => {
       console.log(resp);
@@ -63,12 +64,14 @@ class App extends Component {
       }) 
     })
   }
-
+// Here's where we grab all of the artist, to make sure they're ready for use!
   componentDidMount () {
     getArtists()
     .then(resp => { 
         console.log(resp);
+        //created an object for artists
         let artists = {};
+        // then looped over the array of objects by the artist id
         resp.data.forEach(artist => {
           artists[artist._id] = artist;
         })
@@ -80,6 +83,7 @@ class App extends Component {
   render() {
     //console.log(this);
     let artists = [];
+    //pushes all into array to be looped over. 
     Object.keys(this.state.artists).forEach(key => {
       let artist = this.state.artists[key];
       artists.push(artist);
@@ -87,7 +91,9 @@ class App extends Component {
 
     return (
       <div className="App">
+        {/* contains call to create new artist */}
         <Navi artists={artists} CreateArtist={this.CreateArtist}/>
+        {/* allows you to use delete and update artist functions! */}
         <ArtistGallary artists={artists} UpdateArtist={this.UpdateArtist} DeleteArtist={this.DeleteArtist}/>
       </div>
     );

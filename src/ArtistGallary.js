@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types'
+//React Materailize was used throughout my project, it's a framework that was paired with React for Optimal use!
 import {Card, CardTitle, Button, Modal, Input, Row} from 'react-materialize'
 import { getArtists } from './requests'
 
