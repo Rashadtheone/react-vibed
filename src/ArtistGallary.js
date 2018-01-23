@@ -21,10 +21,25 @@ class ArtistGallary extends Component {
         margin: "auto",
         marginBottom: '15px'
     }
-    bg = {
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center'
+    innerCard ={
+        width: "200px",
+        textAlign: "right"
+    }
+    artistInfo ={
+        display:"inline"
+    }
+    icons ={
+        width:"50px",
+        height:"50px"
+    }
+    ul ={
+        listStyleType: 'none',
+        margin: 0,
+        padding: 0
+    }
+    li ={
+        display:"inline-block",
+        padding: "5px"
     }
     //the state renders with blank spaces for space holders!
     //Adds ratings to the Database as well.
@@ -86,7 +101,74 @@ class ArtistGallary extends Component {
                             //note the KEY is labled as index, it'll loop throughhh all objects we have and display a card for them. 
                             key={index} header={<CardTitle reveal image={artist.img} waves='light'/>}
                             title={artist.name}
-                            reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
+                            reveal={
+                                <div style={this.artistInfo}>
+                                    <img style={this.innerCard}src= {artist.img} />
+                                    <h6>How I See It!</h6>
+                                    <p>{artist.article}</p>
+                                    <h5>Social</h5>
+                                    <ul style={this.ul}>
+                                    <li style={this.li}>
+                                    <a href={artist.twitter} target="_blank">
+                                    <img style={this.icons} src = 'http://simpleicon.com/wp-content/uploads/twitter-2.png' alt="twitter" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.instagram} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/mU2Bczn.png' alt="instagram" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.snapchat} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/3fBYS9s.png' alt="snapchat" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.facebook} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/DolpqiD.png' alt="facebook" />
+                                    </a>
+                                    </li>
+                                    </ul>
+                                    <h5>Music</h5>
+                                    <ul style={this.ul}>
+                                    <li style={this.li}>
+                                    <a href={artist.itunes} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/ItW4DWH.png' alt="itunes" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.spotify} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/Ih8AQBS.png' alt="spotify" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.soundcloud} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/68SCLJp.png' alt="soundcloud" />
+                                    </a>
+                                    </li>
+                                    <li style={this.li}>
+                                    <a href={artist.tidal} target="_blank">
+                                    <img style={this.icons} src = 'https://i.imgur.com/JLxVZt6.png' alt="tidal" />
+                                    </a>
+                                    </li>
+                                    </ul>
+                                    <h5>Ratings:</h5>
+                                    <ul style={this.ul}>
+                                    <li style={this.li}>
+                                    <h6>Flow:<b>{artist.flow}</b></h6>
+                                    </li>
+                                    <li style={this.li}>
+                                    <h6>Delivery::<b>{artist.delivery}</b></h6>
+                                    </li>
+                                    <li style={this.li}>
+                                    <h6>Visuals::<b>{artist.visuals}</b></h6>
+                                    </li>
+                                    <li style={this.li}>
+                                    <h6>Unique::<b>{artist.unique}</b></h6>
+                                    </li>
+                                    </ul>
+                                </div>
+                            }>
 		                    
                             <Modal 
                             // Here is some more information about this product that is only revealed once clicked on.</p>}>
