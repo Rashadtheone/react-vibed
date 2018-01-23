@@ -8,17 +8,20 @@ class ArtistGallary extends Component {
     //setting Class properies for my artist in this state! 
     // they'll be bound to this module specifically! 
     mainBox = {
-        width: "625px",
+        width: "900px",
         maxWidth: "100%",
         display: "block",
         margin: "auto",
-        paddingTop: '15px'
+        paddingTop: '15px',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'row'
     }
     cardBox = {
-        width: "375px",
+        width: "700px",
         maxWidth: "100%",
         display: "block",
-        margin: "auto",
+        margin: "10px",
         marginBottom: '15px'
     }
     innerCard ={
@@ -31,6 +34,7 @@ class ArtistGallary extends Component {
     icons ={
         width:"50px",
         height:"50px"
+
     }
     ul ={
         listStyleType: 'none',
@@ -171,17 +175,14 @@ class ArtistGallary extends Component {
                             }>
 		                    
                             <Modal 
-                            // Here is some more information about this product that is only revealed once clicked on.</p>}>
-		                    // this one was a tricky, learned more about modalOption, it allowed the use of the button...
-                            // And was the key to EDITING DATA CORRECTLY!
                                 modalOptions={{ready: () => { this.setState({ ...artist }) }}}
                                 header='Update Artist' trigger={<Button>Update Artist</Button>}>
                             <Row>
+
                             <Input placeholder="Enter Name" s={12} label="First Name" defaultValue={artist.name}
                                 onChange={(event, name) => { this.setState({ name }) }}/>
                             <Input placeholder="Enter Image URL" s={12} label="Image URL" defaultValue={artist.img}
                                 onChange={(event, img) => { this.setState({ img }) }}/>
-                            
                             <Input placeholder="Enter SoundCloud URL" s={12} label="SoundCloud" defaultValue={artist.soundcloud}
                                 onChange={(event, soundcloud) => { this.setState({ soundcloud }) }}/>
                             <Input placeholder="Enter YouTube URL" s={12} label="YouTube" defaultValue={artist.youtube}
@@ -213,10 +214,10 @@ class ArtistGallary extends Component {
                                 onChange={(event, unique) => { this.setState({ unique: Number(unique) }) }}/>
                             <Input placeholder="Enter Article" s={12} label="Article" defaultValue={artist.article}
                                 onChange={(event, article) => { this.setState({ article }) }}/>
-                            <Input placeholder="Enter Commenter" s={12} label="Commenter" defaultValue={artist.commenter}
-                                onChange={(event, commenter) => { this.setState({ commenter }) }}/>
                             <Input placeholder="Enter Rating" s={12} label="Rating" defaultValue={artist.rating}
                                 onChange={(event, rating) => { this.setState({ rating: Number(rating) }) }}/>
+                            {/* <Input placeholder="Enter Commenter" s={12} label="Commenter" defaultValue={artist.commenter}
+                                onChange={(event, commenter) => { this.setState({ commenter }) }}/> */}
 
                             <Button waves='light' onClick={() => { this.edit(artist) }}>EDIT</Button>
                             </Row>
