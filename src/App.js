@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Navi from './Navi.js';
-import ArtistGallary from './ArtistGallary'
+import ArtistGallary from './ArtistGallary'  
 import './App.css';
 
 import { createArtist, getArtists, updateArtist, deleteArtist } from './requests'
@@ -9,7 +9,7 @@ import { createArtist, getArtists, updateArtist, deleteArtist } from './requests
 class App extends Component {
   constructor(props) {
     super(props);
-
+    //Binded functions!
     this.CreateArtist = this.CreateArtist.bind(this);
     this.UpdateArtist = this.UpdateArtist.bind(this);
     this.DeleteArtist = this.DeleteArtist.bind(this);
