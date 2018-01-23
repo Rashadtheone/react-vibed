@@ -179,44 +179,44 @@ class ArtistGallary extends Component {
                                 header='Update Artist' trigger={<Button>Update Artist</Button>}>
                                 <Col>
 
-                                    <Input placeholder="Enter Name" s={12} label="First Name" defaultValue={artist.name}
+                                    <Input placeholder="Enter Name" s={12} defaultValue={artist.name}
                                         onChange={(event, name) => { this.setState({ name }) }} />
-                                    <Input placeholder="Enter Image URL" s={12} label="Image URL" defaultValue={artist.img}
+                                    <Input placeholder="Enter Image URL" s={12} defaultValue={artist.img}
                                         onChange={(event, img) => { this.setState({ img }) }} />
-                                    <Input placeholder="Enter SoundCloud URL" s={12} label="SoundCloud" defaultValue={artist.soundcloud}
+                                    <Input placeholder="Enter SoundCloud URL" s={12} defaultValue={artist.soundcloud}
                                         onChange={(event, soundcloud) => { this.setState({ soundcloud }) }} />
-                                    <Input placeholder="Enter YouTube URL" s={12} label="YouTube" defaultValue={artist.youtube}
+                                    <Input placeholder="Enter YouTube URL" s={12} defaultValue={artist.youtube}
                                         onChange={(event, youtube) => { this.setState({ youtube }) }} />
-                                    <Input placeholder="Enter iTunes URL" s={12} label="iTunes" defaultValue={artist.itunes}
+                                    <Input placeholder="Enter iTunes URL" s={12} defaultValue={artist.itunes}
                                         onChange={(event, itunes) => { this.setState({ itunes }) }} />
-                                    <Input placeholder="Enter Spotify URL" s={12} label="Spotify" defaultValue={artist.spotify}
+                                    <Input placeholder="Enter Spotify URL" s={12} defaultValue={artist.spotify}
                                         onChange={(event, spotify) => { this.setState({ spotify }) }} />
-                                    <Input placeholder="Enter Tidal URL" s={12} label="Tidal" defaultValue={artist.tidal}
+                                    <Input placeholder="Enter Tidal URL" s={12} defaultValue={artist.tidal}
                                         onChange={(event, tidal) => { this.setState({ tidal }) }} />
-                                    <Input placeholder="Enter Twitter URL" s={12} label="Twitter" defaultValue={artist.twitter}
+                                    <Input placeholder="Enter Twitter URL" s={12} defaultValue={artist.twitter}
                                         onChange={(event, twitter) => { this.setState({ twitter }) }} />
-                                    <Input placeholder="Enter Instagram URL" s={12} label="Instagram" defaultValue={artist.instagram}
+                                    <Input placeholder="Enter Instagram URL" s={12}  defaultValue={artist.instagram}
                                         onChange={(event, instagram) => { this.setState({ instagram }) }} />
-                                    <Input placeholder="Enter SnapChat URL" s={12} label="SnapChat" defaultValue={artist.snapchat}
+                                    <Input placeholder="Enter SnapChat URL" s={12}  defaultValue={artist.snapchat}
                                         onChange={(event, snapchat) => { this.setState({ snapchat }) }} />
-                                    <Input placeholder="Enter Facebook URL" s={12} label="Facebook" defaultValue={artist.facebook}
+                                    <Input placeholder="Enter Facebook URL" s={12} defaultValue={artist.facebook}
                                         onChange={(event, facebook) => { this.setState({ facebook }) }} />
 
-                                    <Input placeholder="Enter Flow" s={12} label="Flow" defaultValue={artist.flow}
+                                    <Input placeholder="Enter Flow" s={12}  defaultValue={artist.flow}
                                         onChange={(event, flow) => { this.setState({ flow: Number(flow) }) }} />
-                                    <Input placeholder="Enter Delivery" s={12} label="Delivery" defaultValue={artist.delivery}
+                                    <Input placeholder="Enter Delivery" s={12} defaultValue={artist.delivery}
                                         onChange={(event, delivery) => { this.setState({ delivery: Number(delivery) }) }} />
-                                    <Input placeholder="Enter Style" s={12} label="Style" defaultValue={artist.style}
+                                    <Input placeholder="Enter Style" s={12}  defaultValue={artist.style}
                                         onChange={(event, style) => { this.setState({ style: Number(style) }) }} />
-                                    <Input placeholder="Enter Visuals" s={12} label="Visuals" defaultValue={artist.visuals}
+                                    <Input placeholder="Enter Visuals" s={12}  defaultValue={artist.visuals}
                                         onChange={(event, visuals) => { this.setState({ visuals: Number(visuals) }) }} />
-                                    <Input placeholder="Enter Unique" s={12} label="Unique" defaultValue={artist.unique}
+                                    <Input placeholder="Enter Unique" s={12}  defaultValue={artist.unique}
                                         onChange={(event, unique) => { this.setState({ unique: Number(unique) }) }} />
-                                    <Input placeholder="Enter Article" s={12} label="Article" defaultValue={artist.article}
+                                    <Input placeholder="Enter Article" s={12}  defaultValue={artist.article}
                                         onChange={(event, article) => { this.setState({ article }) }} />
-                                    <Input placeholder="Enter Rating" s={12} label="Rating" defaultValue={artist.rating}
+                                    <Input placeholder="Enter Rating" s={12}  defaultValue={artist.rating}
                                         onChange={(event, rating) => { this.setState({ rating: Number(rating) }) }} />
-                                    <Input placeholder="Enter Commenter" s={12} label="comenter" defaultValue={artist.commenter}
+                                    <Input placeholder="Enter Commenter" s={12}  defaultValue={artist.commenter}
                                         onChange={(event, commenter) => { this.setState({ commenter }) }} />
 
                                     <Button waves='light' onClick={() => { this.edit(artist) }}>EDIT</Button>
