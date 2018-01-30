@@ -11,14 +11,16 @@ class ArtistGallary extends Component {
         width: "100%",
         maxWidth: "100%",
         display: "block",
-
         paddingTop: '15px',
         display: 'flex',
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap'
     }
     cardBox = {
-        width: "700px",
+        padding: "10px",
+        width: "350px",
         maxWidth: "100%",
         display: "block",
         margin: "10px",

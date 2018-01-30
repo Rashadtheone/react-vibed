@@ -81,13 +81,15 @@ class App extends Component {
   }
 
   render() {
-    //console.log(this);
+    console.log(this);
     let artists = [];
     //pushes all into array to be looped over. 
     Object.keys(this.state.artists).forEach(key => {
       let artist = this.state.artists[key];
       artists.push(artist);
-    })
+      console.log(artist)
+    })  
+    
 
     return (
       <div className="App">
