@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Navbar, NavItem, Icon, Modal, Button, Row, Input} from 'react-materialize'
-//Note the different functions imported on each Module! 
+//Note the different functions imported on each Module!
 import { createArtist } from './requests'
 import ArtistGallary from './ArtistGallary';
 
@@ -44,40 +44,45 @@ class Navi extends Component {
 
     render () {
         // console.log(this);
-        
+
         return (
             <div>
                 <Navbar brand='Vibed' right>
-                    <Modal header='Create Artist' trigger={<Button>Create Artist</Button>}>
-                        <Row>
+                    <Modal id="artistEntry" header='Create Artist' trigger={<Button>Create Artist</Button>}>
+
                             {/* peep the input butttons, they're set up with functions Creating NEW ArtistGallar
-                            YOU WON"T SEE THIS PAGE UNTIL AFTER YOU HIT CREATE ARTIST MODAL! */}
-                            <Input placeholder="Enter Name" s={12} label="First Name" 
+                            YOU WON"T SEE THIS PAGE UNTIL AFTER YOU HIT CREATE ARTIST MODAL! */
+                            /*   <Input placeholder="new" s={12} label="Image URL"
+                                      onChange={(event, name) => { this.setState({ name }) }}/>
+
+                                */}
+                        <Row>
+                            <Input s={12} placeholder="Name"
                                 onChange={(event, name) => { this.setState({ name }) }}/>
-                            <Input placeholder="Enter Image URL" s={12} label="Image URL" 
-                                onChange={(event, img) => { this.setState({ img }) }}/>
-                            
-                            <Input placeholder="Enter SoundCloud URL" s={12} label="SoundCloud" 
-                                onChange={(event, soundcloud) => { this.setState({ soundcloud }) }}/>
-                            <Input placeholder="Enter YouTube URL" s={12} label="YouTube" 
-                                onChange={(event, youtube) => { this.setState({ youtube }) }}/>
-                            <Input placeholder="Enter iTunes URL" s={12} label="iTunes" 
-                                onChange={(event, itunes) => { this.setState({ itunes }) }}/>
-                            <Input placeholder="Enter Spotify URL" s={12} label="Spotify" 
-                                onChange={(event, spotify) => { this.setState({ spotify }) }}/>
-                            <Input placeholder="Enter Tidal URL" s={12} label="Tidal" 
-                                onChange={(event, tidal) => { this.setState({ tidal }) }}/>
-                            <Input placeholder="Enter Twitter URL" s={12} label="Twitter" 
-                                onChange={(event, twitter) => { this.setState({ twitter }) }}/>
-                            <Input placeholder="Enter Instagram URL" s={12} label="Instagram" 
-                                onChange={(event, instagram) => { this.setState({ instagram }) }}/>
-                            <Input placeholder="Enter SnapChat URL" s={12} label="SnapChat" 
-                                onChange={(event, snapchat) => { this.setState({ snapchat }) }}/>
-                            <Input placeholder="Enter Facebook URL" s={12} label="Facebook" 
-                                onChange={(event, facebook) => { this.setState({ facebook }) }}/>
+                            <Input s={12} placeholder="Image URL"
+                                      onChange={(event, img) => { this.setState({ img }) }}/>
+                            <Input s={12} placeholder="SoundCloud"
+                                      onChange={(event, soundcloud) => { this.setState({ soundcloud }) }}/>
+                            <Input s={12} placeholder="YouTube"
+                                      onChange={(event, youtube) => { this.setState({ youtube }) }}/>
+                            <Input s={12} placeholder="iTunes"
+                                      onChange={(event, itunes) => { this.setState({ itunes }) }}/>
+                            <Input s={12} placeholder="Spotify"
+                                      onChange={(event, spotify) => { this.setState({ spotify }) }}/>
+                            <Input s={12} placeholder="Tidal"
+                                      onChange={(event, tidal) => { this.setState({ tidal }) }}/>
+                            <Input s={12} placeholder="Twitter"
+                                      onChange={(event, twitter) => { this.setState({ twitter }) }}/>
+                            <Input s={12} placeholder="Instagram"
+                                      onChange={(event, instagram) => { this.setState({ instagram }) }}/>
+                            <Input s={12} placeholder="SnapChat"
+                                      onChange={(event, snapchat) => { this.setState({ snapchat }) }}/>
+                            <Input s={12} placeholder="Facebook"
+                                      onChange={(event, facebook) => { this.setState({ facebook }) }}/>
+</Row>
                                 {/* Where it's actually sending it off to the new Databse using the createNewARtist Function.  */}
                             <Button waves='light' onClick={() => { this.createNewArtist() }}>SUBMIT</Button>
-                        </Row>
+
 	                </Modal>
                 </Navbar>
             </div>
